@@ -1,0 +1,12 @@
+[submodule "vendor/raylib"]
+	path = vendor/raylib
+	url = https://github.com/raysan5/raylib.git
+[submodule "vendor/imgui/imgui"]
+	path = vendor/imgui/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "vendor/imgui/rlImGui"]
+	path = vendor/imgui/rlImGui
+	url = https://github.com/raylib-extras/rlImGui.git
+[submodule "vendor/imgui/imnodes"]
+	path = vendor/imgui/imnodes
+	url = https://github.com/Nelarius/imnodes.git
