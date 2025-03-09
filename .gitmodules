@@ -10,3 +10,6 @@
 [submodule "vendor/imgui/imnodes"]
 	path = vendor/imgui/imnodes
 	url = https://github.com/Nelarius/imnodes.git
+[submodule "vendor/imgui/implot"]
+	path = vendor/imgui/implot
+	url = https://github.com/epezent/implot.git
