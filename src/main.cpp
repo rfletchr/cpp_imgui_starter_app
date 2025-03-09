@@ -5,6 +5,7 @@
 
 int main()
 {
+
   SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);
   InitWindow(1920, 1080, "CPP App");
   SetTargetFPS(60);
@@ -20,14 +21,13 @@ int main()
     BeginDrawing();
     ClearBackground(DARKGRAY);
 
-    DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, GetScreenHeight() * 0.45f, DARKGREEN);
-
     rlImGuiBegin();
 
     ImGui::DockSpaceOverViewport(0, NULL, ImGuiDockNodeFlags_PassthruCentralNode);
 
     ImGui::ShowDemoWindow(&showDemoWindow);
 
+    DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, GetScreenHeight() * 0.45f, DARKGREEN);
     rlImGuiEnd();
     EndDrawing();
   }
