@@ -27,7 +27,6 @@ int main()
 
     ImGui::ShowDemoWindow(&showDemoWindow);
 
-    DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, GetScreenHeight() * 0.45f, DARKGREEN);
     rlImGuiEnd();
     EndDrawing();
   }

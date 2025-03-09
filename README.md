@@ -5,10 +5,14 @@ Window management is provided by Raylib, which compiles out of the box on most s
 ## Missing Dependencies
 In cases where configuration fails due to missing dependencies Raylib provides a guide [here](https://github.com/raysan5/raylib/wiki/raylib-dependencies#platform-specific-dependency-notes).
 
+## CMAKE / Ninja
+make sure that both cmake and ninja are installed.
+
 
 ### Building
 The project is configured using CMAKE see `CMakePresets.json`
 
+To build the debug build run the following.
 ```
 cmake --preset debug
 cmake --build --preset debug
