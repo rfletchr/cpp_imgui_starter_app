@@ -3,8 +3,17 @@ This project provides a simple jumping off point for writing ImGui apps with C++
 Window management is provided by Raylib, which compiles out of the box on most systems.
 
 ![Screenshot](./screenshot.png)
-
-
+## Usage
+Checkout the repsitory, making sure to properly initialise the submodules.
+```
+https://github.com/rfletchr/cpp_imgui_starter_app.git my_app
+cd my_app
+git submodule init
+git submodule update --recursive
+cmake --preset debug
+cmake --build --preset debug
+```
+>>>>>>> be60ede1d5f3798b0d0300f9f9eaef9914ef5d87
 
 
 ## Missing Dependencies
