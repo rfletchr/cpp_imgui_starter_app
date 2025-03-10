@@ -13,8 +13,6 @@ git submodule update --recursive
 cmake --preset debug
 cmake --build --preset debug
 ```
->>>>>>> be60ede1d5f3798b0d0300f9f9eaef9914ef5d87
-
 
 ## Missing Dependencies
 In cases where configuration fails due to missing dependencies Raylib provides a guide [here](https://github.com/raysan5/raylib/wiki/raylib-dependencies#platform-specific-dependency-notes).
