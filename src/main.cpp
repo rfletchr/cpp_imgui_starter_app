@@ -2,6 +2,7 @@
 #include "raylib.h"
 #include "imgui.h"
 #include "rlImGui.h"
+#include "implot.h"
 
 int main()
 {
@@ -11,6 +12,7 @@ int main()
   SetTargetFPS(60);
   rlImGuiSetup(true);
   ImNodes::CreateContext();
+  ImPlot::CreateContext();
 
   bool showDemoWindow = true;
 
@@ -26,11 +28,13 @@ int main()
     ImGui::DockSpaceOverViewport(0, NULL, ImGuiDockNodeFlags_PassthruCentralNode);
 
     ImGui::ShowDemoWindow(&showDemoWindow);
+    ImPlot::ShowDemoWindow();
 
     rlImGuiEnd();
     EndDrawing();
   }
   ImNodes::DestroyContext();
+  ImPlot::DestroyContext();
   rlImGuiShutdown();
 
   CloseWindow();
