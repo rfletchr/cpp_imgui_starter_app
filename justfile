@@ -1,4 +1,4 @@
-debug: build_debug
+debug: git_submodules build_debug
   build/debug/cpp_app
 
 configure_debug:
@@ -6,6 +6,11 @@ configure_debug:
 
 build_debug: configure_debug
   cmake --build --preset debug
+
+
+git_submodules:
+  git submodule init
+  git submodule update --recursive
 
 
 
