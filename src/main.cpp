@@ -1,43 +1,43 @@
 #include "imnodes.h"
-#include "raylib.h"
 #include "imgui.h"
-#include "rlImGui.h"
 #include "implot.h"
+#include "app.hpp"
+
+void init()
+{
+  ImNodes::CreateContext();
+  ImPlot::CreateContext();
+  ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+}
+
+bool loop()
+{
+  static bool show_demo_window = true;
+  static bool should_close = false;
+
+  App::BeginFrame();
+
+  ImGui::DockSpaceOverViewport(0, NULL, ImGuiDockNodeFlags_PassthruCentralNode);
+
+  ImGui::ShowDemoWindow(&show_demo_window);
+  ImPlot::ShowDemoWindow();
+
+  App::EndFrame();
+
+  return should_close;
+};
+
+void shutdown()
+{
+  ImNodes::DestroyContext();
+  ImPlot::DestroyContext();
+}
 
 int main()
 {
 
-  SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);
-  InitWindow(1920, 1080, "CPP App");
-  SetTargetFPS(60);
-  rlImGuiSetup(true);
-  ImNodes::CreateContext();
-  ImPlot::CreateContext();
-
-  bool showDemoWindow = true;
-
-  ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-
-  while (!WindowShouldClose())
-  {
-    BeginDrawing();
-    ClearBackground(DARKGRAY);
-
-    rlImGuiBegin();
-
-    ImGui::DockSpaceOverViewport(0, NULL, ImGuiDockNodeFlags_PassthruCentralNode);
-
-    ImGui::ShowDemoWindow(&showDemoWindow);
-    ImPlot::ShowDemoWindow();
-
-    rlImGuiEnd();
-    EndDrawing();
-  }
-  ImNodes::DestroyContext();
-  ImPlot::DestroyContext();
-  rlImGuiShutdown();
-
-  CloseWindow();
+  App::WindowSettings settings = {.width = 640, .height = 480};
+  App::Exec(&settings, loop, init, shutdown);
 
   return 0;
 }

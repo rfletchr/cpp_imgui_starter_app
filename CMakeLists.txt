@@ -9,11 +9,13 @@ option(ENABLE_IM_PLOT "enable ImPlot" ON)
 add_subdirectory(vendor/raylib)
 add_subdirectory(vendor/imgui)
 
-# suppress warnings from vendor libraries. 
+# suppress warnings from vendor libraries.
 if(SUPPRESS_VENDOR_WARNINGS)
 	target_compile_options(imgui PRIVATE -w)
 	target_compile_options(raylib PRIVATE -w)
 endif()
 
-add_executable(${PROJECT_NAME} src/main.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/app.cpp)
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib imgui)
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
+
